@@ -1,2 +1,7 @@
+bin
+obj
+*.sln
+*.userprefs
+*.csproj
 .DS_STORE
 *.swp
