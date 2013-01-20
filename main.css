@@ -1,0 +1,64 @@
+.tab-pane
+{
+    padding: 10px;
+}
+#state tbody tr td
+{
+    width: 50px;
+    height: 50px;
+}
+.inputBtn
+{
+    width: 160px;
+    height: 160px;
+    border: solid 1px black;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    background: #eeeeee;
+}
+.inputBtn a:hover { text-decoration: none; color: #669999 }
+.inputBtn a {color: black}
+#result
+{
+    font-size: 16pt;
+    color:#669999;
+}
+#header h1
+{
+    font-size: 36pt;
+    padding: 15px;
+    text-shadow: 2px 2px #777777;
+}
+#mainHeader
+{
+    padding: 10px;
+}
+.subtitle
+{
+    font-size: 20pt;
+    padding-left: 20px;
+    text-shadow: 2px 2px #777777;
+}
+#money 
+{
+float:left;
+}
+#cloud
+{
+float:right;
+}
+#body
+{
+    background: #eeeeee;
+}
+#mainContainer
+{
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid 1px #aaaaaa
+}
