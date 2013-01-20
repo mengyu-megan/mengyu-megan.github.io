@@ -1,77 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Meng Yu</title>
-<script type="text/javascript" src="jquery.js"></script>
-<!--Bootstrap-->
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-</head>
+    <head>
 
-<body>
-<h1>Meng Yu</h1><br>
+        <title>Meng Yu</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        
+        <!--Bootstrap-->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <style>.tab-pane{padding: 10px;}</style>
+                <style>
+            #state tbody tr td
+            {
+                width: 50px;
+                height: 50px;
+            }
+            .inputBtn
+            {
+                width: 150px;
+                height: 150px;
+                border: solid 1px black;
+                font-size: 20pt;
+                font-weight: bold;
+                text-align: center;
+                vertical-align: middle;
+                display: table-cell;
+                background: #eeeeee;
+            }
+            #result
+            {
+                font-size: 16pt;
+            }
+        </style>
+    </head>
 
-<!-- This is the tab itself-->
-<ul class="nav nav-tabs">
-  <li><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#profile" data-toggle="tab">Profile</a></li>
-  <li><a href="#messages" data-toggle="tab">Messages</a></li>
-  <li><a href="#settings" data-toggle="tab">Settings</a></li>
-</ul>
+    <body>
 
-<!-- The actual content of the tab-->
-<div class="tab-content">
-  <div class="tab-pane active" id="home">
-<p1>Welcome to Meng Yu's personal website. Meng is a recent graduate from New York University, just obtained Master's degree.  Meng is proactively seeking for a career move that combines her IT working experience with business academic background.<br>
-    Meng has hands-on experience on Business Intelligence System, Data Analytics, Data Mining, and financial modeling. This webpage serves as an online profile for demonstrating Meng's demo models, incorporating the thoughts collected from various experience.
-    Interested in roles as Consultant, Business Analyst, Data Analyst, Quality Assurance Engineer and similar roles.
-</p1><br>
+        <div class="container">
+            <div class="span8 offset2">
 
-<h4>Activities</h4>
-<p3><b>Bank of China, New York, NY</b><br>
-Consultant, America Data Center May 2012 – Present<br>
-    <b>ESK Capital Management, LLC, New York, NY</b><br>
-Executive Assistant, Wealth Management/ Private Equity March 2011 – November 2011<br>
-<b>ICBC, New York, NY</b><br>
-Corporate Banking/Marketing Summer Analyst August 2010 – September 2010<br>
-<b>Siemens Ltd., Beijing, China</b><br>
-Management Consulting Intern December 2009 – July 2010<br>
-</p3>
+                <h1>Meng Yu</h1><br>
 
-<h3>Skills and Qualifications</h3>
-<p2> <b>Programming:</b> Proficient in Java, SQL, VBA, MATLAB, C#, .NET, HTML, CSS<br>
-<b>Certification:</b> CFA Level II candidate, Qualification of Security Practitioner<br>
-<b>Language:</b> Fluent in Mandarin, conversational Cantonese, rudimentary Japanese</p2>
-  </div>
-  
-  <div class="tab-pane" id="profile">
-<!--Launch the model dialog-->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+                <!-- This is the tab itself-->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                    <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                    <li><a href="#stockclustering" data-toggle="tab">Stock Clustering</a></li>
+                    <li><a href="#strategydetection" data-toggle="tab">Strategy Detection</a></li>
+                </ul>
 
-<!--Actual dialog HTML code-->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
-</div>
+                <!-- The actual content of the tab-->
+                <!-- Tab Home-->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <p1>Welcome to Meng Yu's personal website. Meng obtained Master's degree from New York University in May 2012. Meng is proactively seeking for a career move that combines her IT working experience with business academic background. Opportunities as Consultant, Business Analyst, Data Analyst, and similar roles are to be welcomed.<br>
+                        Meng Yu has hands-on experience on Business Intelligence System, Data Analytics, Data Mining, and financial modeling. Machine learning is also an interesting topic Meng dabbles in.<br>
+                        This webpage serves as an online profile for demonstrating Meng's demo models, incorporating the thoughts collected from various experience. 
+                        </p1><br>
+                    </div>
 
-  </div>
-  
-  <div class="tab-pane" id="messages">
-  </div>
-  
-  <div class="tab-pane" id="settings">
-  <p>This is for settings</p>
-  </div>
-</div>
+                    <!--Tab Profile-->
+                    <div class="tab-pane" id="profile">
+                        <h3>Activities</h3>
+                        <p2><b>Bank of China, New York, NY</b><br>
+                        Consultant, America Data Center May 2012 - Present<br>
+                        <b>ESK Capital Management, LLC, New York, NY</b><br>
+                        Executive Assistant, Wealth Management/ Private Equity March 2011 - November 2011<br>
+                        <b>ICBC, New York, NY</b><br>
+                        Corporate Banking/Marketing Summer Analyst August 2010 - September 2010<br>
+                        <b>Siemens Ltd., Beijing, China</b><br>
+                        Management Consulting Intern December 2009 - July 2010<br>
+                        </p2>
 
-</body>
+                        <h3>Skills and Qualifications</h3>
+                        <p2> <b>Programming:</b> Proficient in Java, SQL, VBA, MATLAB, C#, .NET, HTML, CSS<br>
+                        <b>Certification:</b> CFA Level II candidate, Qualification of Security Practitioner<br>
+                        <b>Language:</b> Fluent in Mandarin, conversational Cantonese, rudimentary Japanese</p2>
+                    </div>
+
+                    <!--Tab Stock Clustering-->
+                    <div class="tab-pane" id="stockclustering">
+                    <h3> Stock Clustering utilizing JDBC and Machine Learning</h3>
+                    <p2>The underlying logic of this project is to collects stock market data from the Internet with Java, stores data in SQL Server, and does analysis and visualization with MATLAB.<br>
+                    Intuitively thinking, prices of certain stocks tend to go up and down together, either because they are in the same industry or because they are from the same region.<br>
+                    In other words, such each stocks logical connected, prediction. This is meaningful for portfolio management, avoid put eggs in the same basket.<br>
+                    Say we have 100 stocks, and daily prices for this year. So we get a 100 by 250 dimension matrix, roughly (weekends). Each stock is represented by a vector. The number of component is too large to estimate.Then we use PCA(principal component analysis) Analysis,ML techniques. Dimension reduction, extract principal component. . After visualization, each stock is represented by a dot on a coordinate, and these dots falls into several clusters. <br>
+                    </p2>
+                       
+                        <a href="#myModel" role="button" class="btn" data-toggle="modal">Launch demo model</a>
+
+                        <!--Actual dialog HTML code-->
+                        <div id="myModel" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModelLabel" aria-hidden="true">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3 id="myModelLabel">Model header</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>One fine body…</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                <button class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="tab-pane" id="strategydetection">
+                        <h3> Human Versus Machine</h3>
+                        <p>Here I propose a statistical model to explore the ability of a computer to forecast human being's action choice.to assess whether individuals strategically use mixed strategies in repeated games. A Markov model is formulated in which the latent state space contains both pure and mixed strategies, and allows switching between these states. You will see machine learns from previous repeated gaming that a computer always follows its part of the unique mixed strategy Nash equilibrium profile.Estimated results show significant mixed strategy play and non-stationary dynamics.</p>
+                    <!-- Scissors Rock Paper-->
+                     <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="btnS" class="inputBtn"><img src="scissors.png" width="100" height="100"/>Scissors
+                        </div>
+                    </td>
+                    <td>
+                        <div id="btnR" class="inputBtn"><img src="rock.png" width="100" height="100"/>Rock
+                        </div>
+                        
+                    </td>
+                    <td>
+                        <div id="btnP" class="inputBtn"><img src="paper.png" width="100" height="100"/>Paper</div>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="result">Please click to start.</p>
+        <p id="guess"></p>
+        <p>State transfer matrix</p>
+        <table id="state">
+            <tbody>
+                <tr>
+                    <td id="t00"></td>
+                    <td id="t01"></td>
+                    <td id="t02"></td>
+                </tr>
+                <tr>
+                    <td id="t10"></td>
+                    <td id="t11"></td>
+                    <td id="t12"></td>
+                </tr>
+                <tr>
+                    <td id="t20"></td>
+                    <td id="t21"></td>
+                    <td id="t22"></td>
+                </tbody>
+            </table>
+ <script type="text/javascript" src="scissors-rock-paper.js"></script>
+                    
+                    
+                    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
 </html>
