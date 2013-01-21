@@ -30,7 +30,7 @@ function update(graph, stocks, data)
     // invoke d3.js to visualize
     var color = d3.scale.category20();
     var width = 640;
-    var height = 640;
+    var height = 560;
     var force = d3.layout.force()
         .charge(-500)
         .linkDistance(160)

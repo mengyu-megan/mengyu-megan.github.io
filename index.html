@@ -31,7 +31,7 @@
                     <!-- This is the tab itself-->
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
-                        <li><a href="#profile" data-toggle="tab">BI from Scratch</a></li>
+                        <!--<li><a href="#profile" data-toggle="tab">BI from Scratch</a></li>-->
                         <li><a href="#stockclustering" data-toggle="tab">Stock Clustering</a></li>
                         <li><a href="#strategydetection" data-toggle="tab">Strategy Detection</a></li>
                     </ul>
@@ -43,7 +43,7 @@
                             <h3>Profile</h3>
                             <p>Meng Yu obtained Master's degree from New York University in May 2012, and she is proactively seeking for a career move that combines her IT working experience with business academic background, such as consultant, business analyst, data analyst. Meng has got hands-on experience on Business Intelligence system, data analytics, data mining, and financial modeling. Machine learning is also an interesting topic that Meng has recently been working on.</p>
                             <p>Driven by great passion in the cross disciplinary study, Meng set out to explore applications of IT technologies in financial market and social science. For example, through machine training, a computer is able to emulate human beings, and make Nash equilibrium decisions. And the advances in data mining can also expand human's capability in understanding complex stock market.</p>
-                            <p>This website serves as an online profile for demonstrating Meng's demo models, incorporating the thoughts collected from various experience. Please click through the tabs above for the online interactive demos. Recommendations of all kinds are welcome, please do not hesitate to email me at <span id="ma"/> . </p>
+                            <p>This website serves as an online profile for demonstrating Meng's demo models, incorporating the thoughts collected from various experience (mostly related with Business Intelligence). Please click through the tabs above for the online interactive demos. Recommendations of all kinds are welcome, please do not hesitate to email me at <span id="ma"/> . </p>
 
                                 <h3><br>Activities</h3>
                                 <p><b>Bank of China, New York, NY</b><br>
@@ -66,13 +66,10 @@
 
                                 <h3> Business Intelligence in the Cloud</h3>
                                 <img id="cloud" src="cloud.jpg" width="275" height="325" />
-                                <p>The goal of modern business intelligence deployments is to support better business decision-making. Often BI applications use data gathered from a data warehouse or a data mart. However, cloud computing provides an alternative way.</p>
-                                <p> Cloud-based or software-as-a-service (SaaS) solutions can be easily fit to companies of all shapes and sizes. This allows even the smallest businesses the ability to tailor a BI system to fit their needs and improve their businesses. Moreover, unlike traditional site-licensed softwarema cloud-based BI solution, upfront cost is reduced because all hardware and software systems are located and managed remotely by vendors and service providers.</p>
-                                <p> Trend: Cloud will become more and more widely used. Business are working on improving the security of cloud computing platforms.</p>
+                                <p>Programming is critical for making smart business decisions based on real-life data. In this process, data collection, storage, processing and visualization are the core modules making up a Business Intelligence (BI) system. With the passion to use programming to solve real-life problems, I built a BI system from scratch.</p>
+
 
                             </div>
-
-
 
                             <!--Tab Stock Clustering-->
                             <div class="tab-pane" id="stockclustering">
@@ -81,26 +78,25 @@
                                 <!-- There are theories about stock ban kuai in economics -->
 
                                 <!-- Intuitively thinking, clustering stocks as ban kuais can also help understanding and predicting the stock market -->
-                                <p>It has been widely accepted that Domino Effect of Board Linkage exist in security market. Intuitively thinking, prices of certain stocks tend to go up and down together, either because they are in the same industry or because they are from the same region.In other words, such each stocks logical connected, prediction. This is meaningful for portfolio management idea of avoiding putting eggs in the same basket.</p>
+                                <p>It has been widely accepted that Domino Effect of Board Linkage exist in security market. Intuitively thinking, prices of certain stocks tend to go up and down together, either because they are in the same industry or because they are from the same region. This is especially meaningful for portfolio management.</p>
                                 <!-- Usage of the demo -->
-                                <p>Here we provide an interactive demo to demonstrate how such data mining techniques help improve human's understanding of the stock market. Given the stocks (specified by symbols) in the textbox below, we are able to identify their structure from the price correlations in the recent 300 days, and visualize such structure with a graph. </p>
+                                <p>Here we provide an interactive demo to demonstrate how such data mining techniques help improve human's understanding of the stock market. Given the stocks (specified by symbols) in the textbox below, we are able to identify their structure from the price correlations in 2012, and visualize such structure with a graph. </p>
                                 <!-- Analysis of the demo -->
-                                <p>Say we have 100 stocks, and daily prices for this year. So we get a 100 by 250 dimension matrix, roughly (weekends). Each stock is represented by a vector. The number of component is too large to estimate.Then we use PCA(principal component analysis) Analysis through dimension reduction and extracting principal component. After visualization, each stock is represented by a dot on a coordinate, and these dots falls into several clusters. </p>
-                                <p>You can also modify the symbols by yourself and see our algorithm's observation towards the market. Type in the symbol of any listed security and see what happens.</p>
+                                <p>We've already put an example set in the textbox. Click "Run!" to build the visualization. You can also modify the symbols (should be indexed by S&amp;P 500) by yourself and check the results. If the default stocks are used, it's obvious that the financial stocks and IT stocks are separated into two clusters within our visualization.</p>
+                                <p>This demo involves python for stock data crawling, javascript for data analysis and visualization.</p>
+                                
                                 <textarea rows="5" cols="80" id="stocks">MSFT, INTC, AXP, C, JPM, BAC, WFC, COF, BRCM, NVDA, TXN</textarea>
                                 <br />
-                                <input type="submit" id="btnRun"></input>
+                                <input type="submit" id="btnRun" Value="Run!"></input>
                                 <br />
                                 <svg id="svg" width="640" height="560"></svg>
                             </div>
 
                             <div class="tab-pane" id="strategydetection">
-                                <h3> Human Versus Machine</h3>
-                                <p>Here I propose a statistical model to explore the ability of a computer to forecast human being's choice. A Markov model is formulated in which the latent state space contains both pure and mixed strategies, and allows switching between these states. <br><br>
-                                In the following simplified "Scissors Rock Papaer" game, you will see machine learns from previous repeated gaming. A computer always follows its part of the unique mixed strategy Nash equilibrium profile.<br><br>
-                                On the other hand, estimated results show significant mixed strategy play and non-stationary dynamics.this model could assess whether individuals strategically use mixed strategies in repeated games.<br><br>
-                                Now let us see if you could beat the machine. Click on one of the three blocks to start. <br><br>
-                                </p>
+                                <h3>Strategy Detection with Time Sequence Analysis</h3>
+                                <p>Human are "intelligent" creatures, but sometimes simple mathematics or economics models can be more smart and beat humans in various tasks. Here we provide a demo about how machines can beat humans in the game "rock-paper-scissors".</p>
+                                <p>Click the button below to start the game. We also output the machine's strategy for the next round and the transfer matrix of the internal Markov model for better illustration. Come and experience one small example of our Business Intelligence.</p>
+                                <p>From another perspective, estimated results show significant mixed strategy play and non-stationary dynamics. This model could assess whether individuals strategically use mixed strategies in repeated games.</p>
                                 <!-- Scissors Rock Paper-->
                                 <p id="result">Please click one picture to start.</p>
                                 <table>
@@ -122,11 +118,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-
-
-
-                                <p id="result"><br><br>Tansfer Matrix</p>
-
+                                <p id="result"><br><br>Transfer Matrix</p>
                                 <table id="state" border=1px>
                                     <tbody>
                                         <tr>
@@ -150,13 +142,8 @@
                                     </table>
 
                                     <p id="result"><br><br>Machine's Guessing<br></p>
-                                    <div style="background-color:lightblue" ><p id="guess"></p></div>
-                                    <p><i>Note:Above shows the machine's guessing for the next round. Suggest you do not look at it when making you next decision.</i></p><br><br><br><br>
-
+                                    <div style="background-color:lightblue" ><p id="guess" style="margin-bottom: 100px"></p></div>
                                     <script type="text/javascript" src="scissors-rock-paper.js"></script>
-
-
-
                                 </div>
                             </div>
 
