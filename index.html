@@ -9,11 +9,22 @@
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="bootstrap/css/docs.css" rel="stylesheet">
         <link href="main.css" rel="stylesheet"></style>
-    <script type="text/javascript" src="d3.v3.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="stocks.js"></script>
-    <script type="text/javascript">
-        $(function(){ $('#ma').html('<a href="mailto:meng.yu' + '@nyu' + '.edu">meng.yu' + '@nyu' + '.edu</a>'); });
+        <script type="text/javascript" src="d3.v3.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="stocks.js"></script>
+        <script type="text/javascript">
+            $(function(){ 
+                $('#ma').html('<a href="mailto:meng.yu' + '@nyu' + '.edu">meng.yu' + '@nyu' + '.edu</a>'); 
+                var m = window.location.href.match(/.*#(.*)/);
+                if (m != null)
+                     $('#mainTab a[href="#' + m[1] + '"]').tab('show');
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() 
+            {
+                $('[rel="tooltip"]').tooltip({ 'selector': '', 'placement': 'top' });
+            });
         </script>
     </head>
 
@@ -29,11 +40,11 @@
             <div class="container">
                 <div class="span8 offset2" id="mainContainer">
                     <!-- This is the tab itself-->
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
-                        <!--<li><a href="#profile" data-toggle="tab">BI from Scratch</a></li>-->
-                        <li><a href="#stockclustering" data-toggle="tab">Stock Clustering</a></li>
-                        <li><a href="#strategydetection" data-toggle="tab">Strategy Detection</a></li>
+                    <ul class="nav nav-tabs" id="mainTab">
+                        <li class="active"><a href="#home" data-toggle="tab" id="tabHome">Profile</a></li>
+                        <li><a href="#bi" data-toggle="tab" id="tabBi">BI from Scratch</a></li>
+                        <li><a href="#stockclustering" data-toggle="tab" id="tabSC">Stock Clustering</a></li>
+                        <li><a href="#strategydetection" data-toggle="tab" id="tabSD">Strategy Detection</a></li>
                     </ul>
 
                     <!-- The actual content of the tab-->
@@ -62,21 +73,26 @@
                             </div>
 
                             <!--Tab BI-->
-                            <div class="tab-pane" id="profile">
+                            <div class="tab-pane" id="bi">
 
-                                <h3> Business Intelligence in the Cloud</h3>
-                                <img id="cloud" src="cloud.jpg" width="275" height="325" />
+                                <h3> Business Intelligence from Scratch</h3>
+                                <!--<img id="cloud" src="cloud.jpg" width="275" height="325" />-->
                                 <p>Programming is critical for making smart business decisions based on real-life data. In this process, data collection, storage, processing and visualization are the core modules making up a Business Intelligence (BI) system. With the passion to use programming to solve real-life problems, I built a BI system from scratch.</p>
-
-
+                                <p>Move the mouse cursor above each module to see more detailed introduction. For demos of our data visualization module, check <a href="#stockclustering" onclick="$('#tabSC').tab('show');">stock clustering</a>. For demos of our machine learning algorithms, check <a href="#strategydetection" onclick="$('#tabSD').tab('show');">strategy detection</a>.</p>
+                                <div id="biCanvas">
+                                    <a href="#" rel="tooltip" title="We use Microsoft SQL Server 2012 R2 on a Windows Server 2008 R2 server to provide data storage and processing." style="left: 180px; top: 270px; width: 90px; height: 90px"><div style="width: 90px; height: 90px"></div></a>
+                                    <a href="#" rel="tooltip" title="Yahoo! Finance provides a public URL through which we can get day-level stock information, such as price and volume. We use it as the information source for further data processing." style="left: 48px; top: -50px; width: 130px; height: 58px"><div style="width: 130px; height: 58px"></div></a>
+                                    <a href="#" rel="tooltip" title="The data collection module crawls stock information from Yahoo! Finance API and then stores suck bulk volume data in our database." style="left: 55px; top: 100; width: 116px; height: 60px"><div style="width: 116px; height: 60px"></div></a>
+                                    <a href="#" rel="tooltip" title="This is the core part of our BI system. Several machine learning algorithms are applied on the data, such as dimension reduction and stock clustering. The module consists several parts written in Java and MATLAB. It pulls data and pushes the results from and to the database with JDBC." style="left: 280px; top: -70px; width: 140px; height: 78px"><div style="width: 140px; height: 78px"></div></a>
+                                    <a href="#" rel="tooltip" title="To help huamns further explore the insights from the data intuitively, our system is able to generate reports with vivid interactive visualization from the analysis." style="left: 482px; top: -145px; width: 160px; height: 76px"><div style="width: 160px; height: 76px"></div></a>
+                                    <a href="#" rel="tooltip" title="We also provide a web-based server monitoring interface to monitor the load of the server." style="left: 275px; top: 78px; width: 120px; height: 70px"><div style="width: 120px; height: 70px"></div></a>
+                                </div>
                             </div>
 
                             <!--Tab Stock Clustering-->
                             <div class="tab-pane" id="stockclustering">
                                 <h3>Mine the Connections among Stocks</h3>
                                 <img id="money" src="money.jpg" width="150" height="175" />
-                                <!-- There are theories about stock ban kuai in economics -->
-
                                 <!-- Intuitively thinking, clustering stocks as ban kuais can also help understanding and predicting the stock market -->
                                 <p>It has been widely accepted that Domino Effect of Board Linkage exist in security market. Intuitively thinking, prices of certain stocks tend to go up and down together, either because they are in the same industry or because they are from the same region. This is especially meaningful for portfolio management.</p>
                                 <!-- Usage of the demo -->
@@ -109,11 +125,9 @@
                                             <td width=200px>
                                                 <div id="btnR" class="inputBtn"><a><img src="rock.png" width="100" height="100"/>Rock</a>
                                                 </div>
-
                                             </td>
                                             <td width=200px>
                                                 <div id="btnP" class="inputBtn"><a><img src="paper.png" width="100" height="100"/>Paper</a></div>
-
                                             </td>
                                         </tr>
                                     </tbody>
@@ -128,19 +142,16 @@
                                             <td id="t02"></td>
                                         </tr>
                                         <tr>
-
                                             <td id="t10"></td>
                                             <td id="t11"></td>
                                             <td id="t12"></td>
                                         </tr>
                                         <tr>
-
                                             <td id="t20"></td>
                                             <td id="t21"></td>
                                             <td id="t22"></td>
                                         </tbody>
                                     </table>
-
                                     <p id="result"><br><br>Machine's Guessing<br></p>
                                     <div style="background-color:lightblue" ><p id="guess" style="margin-bottom: 100px"></p></div>
                                     <script type="text/javascript" src="scissors-rock-paper.js"></script>

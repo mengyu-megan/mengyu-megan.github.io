@@ -1,3 +1,24 @@
+#biCanvas
+{
+    width: 660px;
+    height: 520px;
+    background-image: url('biCanvas.png');
+}
+#biCanvas a
+{
+    position: relative;
+    display: block;
+}
+#biCanvas a:hover
+{
+    text-decoration: none;
+}
+#biCanvas a div
+{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
 #stocks
 {
     font-size: 14pt;
