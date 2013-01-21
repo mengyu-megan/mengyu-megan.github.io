@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Stock clustering demo</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="d3.v3.min.js"></script>
+        <script type="text/javascript" src="stocks.js"></script>
+        <style>
+            #stocks
+            {
+                font-size: 14pt;
+                width: 700px;
+                height: 100px;
+            }
+            #btnRun
+            {
+                width: 90px;
+                height: 30px;
+            }
+            .node {
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+            .link {
+                stroke: #999;
+                stroke-opacity: .6;
+            }
+            svg
+            {
+                border: solid 1px black;
+                margin: 10px;
+            }
+        </style>
+	</head>
+	<body>
+        <h2>Stock clustering demo</h2>
+        <p>Please input stock symbols on the textbox below (separated by comma, order doesn't count):</p>
+        <textarea rows="5" cols="80" id="stocks">MSFT, INTC, AXP, C, JPM, BAC, WFC, COF, BRCM, NVDA, TXN</textarea>
+        <br />
+        <input type="submit" id="btnRun"></input>
+        <br />
+        <svg id="svg" width="640" height="480"></svg>
+	</body>
+</html>

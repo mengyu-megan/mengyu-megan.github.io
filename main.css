@@ -1,3 +1,27 @@
+#stocks
+{
+    font-size: 14pt;
+    width: 700px;
+    height: 100px;
+}
+#btnRun
+{
+    width: 90px;
+    height: 30px;
+}
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+.link {
+    stroke: #999;
+    stroke-opacity: .6;
+}
+svg
+{
+    border: solid 1px black;
+    margin: 10px;
+}
 .tab-pane
 {
     padding: 10px;
@@ -44,11 +68,11 @@
 }
 #money 
 {
-float:left;
+    float:left;
 }
 #cloud
 {
-float:right;
+    float:right;
 }
 #body
 {

@@ -9,9 +9,11 @@
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="bootstrap/css/docs.css" rel="stylesheet">
         <link href="main.css" rel="stylesheet"></style>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            $(function(){ $('#ma').html('<a href="mailto:meng.yu' + '@nyu' + '.edu">meng.yu' + '@nyu' + '.edu</a>'); });
+    <script type="text/javascript" src="d3.v3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="stocks.js"></script>
+    <script type="text/javascript">
+        $(function(){ $('#ma').html('<a href="mailto:meng.yu' + '@nyu' + '.edu">meng.yu' + '@nyu' + '.edu</a>'); });
         </script>
     </head>
 
@@ -42,138 +44,124 @@
                             <p>Meng Yu obtained Master's degree from New York University in May 2012, and she is proactively seeking for a career move that combines her IT working experience with business academic background, such as consultant, business analyst, data analyst. Meng has got hands-on experience on Business Intelligence system, data analytics, data mining, and financial modeling. Machine learning is also an interesting topic that Meng has recently been working on.</p>
                             <p>Driven by great passion in the cross disciplinary study, Meng set out to explore applications of IT technologies in financial market and social science. For example, through machine training, a computer is able to emulate human beings, and make Nash equilibrium decisions. And the advances in data mining can also expand human's capability in understanding complex stock market.</p>
                             <p>This website serves as an online profile for demonstrating Meng's demo models, incorporating the thoughts collected from various experience. Please click through the tabs above for the online interactive demos. Recommendations of all kinds are welcome, please do not hesitate to email me at <span id="ma"/> . </p>
-                            
-                            <h3><br>Activities</h3>
-                            <p><b>Bank of China, New York, NY</b><br>
-                            Consultant, America Data Center, May 2012 - Present</p>
-                            <p><b>ESK Capital Management, LLC, New York, NY</b><br>
-                            Executive Assistant, Wealth Management/ Private Equity, March 2011 - November 2011</p>
-                            <p><b>ICBC, New York, NY</b><br>
-                            Corporate Banking/Marketing Summer Analyst, August 2010 - September 2010</p>
-                           <p> <b>Simens, Ltd, Beijing, China</b><br>
-                           Management Consulting Intern, December 2009 - July 2010 </p>
 
-                            <h3><br>Skills and Qualifications</h3>
-                            <p> <b>Programming:</b> Proficient in Java, SQL, VBA, MATLAB, C#, .NET, HTML, CSS</p>
-                            <p><b>Certification:</b> CFA Level II candidate, Qualification of Security Practitioner</p>
-                            <p><b>Language:</b> Fluent in Mandarin, conversational Cantonese, rudimentary Japanese<br><br><br><br></p>
-                        </div>
+                                <h3><br>Activities</h3>
+                                <p><b>Bank of China, New York, NY</b><br>
+                                Consultant, America Data Center, May 2012 - Present</p>
+                                <p><b>ESK Capital Management, LLC, New York, NY</b><br>
+                                Executive Assistant, Wealth Management/ Private Equity, March 2011 - November 2011</p>
+                                <p><b>ICBC, New York, NY</b><br>
+                                Corporate Banking/Marketing Summer Analyst, August 2010 - September 2010</p>
+                                <p> <b>Simens, Ltd, Beijing, China</b><br>
+                                Management Consulting Intern, December 2009 - July 2010 </p>
 
-                        <!--Tab BI-->
-                        <div class="tab-pane" id="profile">
-                       
-                         <h3> Business Intelligence in the Cloud</h3>
-                         <img id="cloud" src="cloud.jpg" width="275" height="325" />
-                         <p>The goal of modern business intelligence deployments is to support better business decision-making. Often BI applications use data gathered from a data warehouse or a data mart. However, cloud computing provides an alternative way.</p>
-                        <p> Cloud-based or software-as-a-service (SaaS) solutions can be easily fit to companies of all shapes and sizes. This allows even the smallest businesses the ability to tailor a BI system to fit their needs and improve their businesses. Moreover, unlike traditional site-licensed softwarema cloud-based BI solution, upfront cost is reduced because all hardware and software systems are located and managed remotely by vendors and service providers.</p>
-                        <p> Trend: Cloud will become more and more widely used. Business are working on improving the security of cloud computing platforms.</p>
-                                            
-                        </div>
-                        
-                                             
-
-                        <!--Tab Stock Clustering-->
-                        <div class="tab-pane" id="stockclustering">
-                            <h3>Mine the Connections among Stocks</h3>
-                            <img id="money" src="money.jpg" width="150" height="175" />
-                            <!-- There are theories about stock ban kuai in economics -->
-                   
-                            <!-- Intuitively thinking, clustering stocks as ban kuais can also help understanding and predicting the stock market -->
-                            <p>It has been widely accepted that Domino Effect of Board Linkage exist in security market. Intuitively thinking, prices of certain stocks tend to go up and down together, either because they are in the same industry or because they are from the same region.In other words, such each stocks logical connected, prediction. This is meaningful for portfolio management idea of avoiding putting eggs in the same basket.</p>
-                            <!-- Usage of the demo -->
-                            <p>Here we provide an interactive demo to demonstrate how such data mining techniques help improve human's understanding of the stock market. Given the stocks (specified by symbols) in the textbox below, we are able to identify their structure from the price correlations in the recent 300 days, and visualize such structure with a graph. </p>
-                            <!-- Analysis of the demo -->
-                            <p>Say we have 100 stocks, and daily prices for this year. So we get a 100 by 250 dimension matrix, roughly (weekends). Each stock is represented by a vector. The number of component is too large to estimate.Then we use PCA(principal component analysis) Analysis through dimension reduction and extracting principal component. After visualization, each stock is represented by a dot on a coordinate, and these dots falls into several clusters. </p>
-                            <p>You can also modify the symbols by yourself and see our algorithm's observation towards the market. Type in the symbol of any listed security and see what happens.</p>
-
-                            <a href="#myModel" role="button" class="btn" data-toggle="modal" style="background-color:lightblue">Launch demo model</a><br><br><br><br>
-
-                            <!--Actual dialog HTML code-->
-                            <div id="myModel" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModelLabel" aria-hidden="true">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h3 id="myModelLabel">Model header</h3>
-                                </div>
-                                <div class="modal-body">
-                                    <p>One fine body…</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                                    <button class="btn btn-primary">Save changes</button>
-                                </div>
+                                <h3><br>Skills and Qualifications</h3>
+                                <p> <b>Programming:</b> Proficient in Java, SQL, VBA, MATLAB, C#, .NET, Javascript, HTML, CSS</p>
+                                <p><b>Certification:</b> CFA Level II candidate, Qualification of Security Practitioner</p>
+                                <p><b>Language:</b> Fluent in Mandarin, conversational Cantonese, rudimentary Japanese<br><br><br><br></p>
                             </div>
 
-                        </div>
+                            <!--Tab BI-->
+                            <div class="tab-pane" id="profile">
 
+                                <h3> Business Intelligence in the Cloud</h3>
+                                <img id="cloud" src="cloud.jpg" width="275" height="325" />
+                                <p>The goal of modern business intelligence deployments is to support better business decision-making. Often BI applications use data gathered from a data warehouse or a data mart. However, cloud computing provides an alternative way.</p>
+                                <p> Cloud-based or software-as-a-service (SaaS) solutions can be easily fit to companies of all shapes and sizes. This allows even the smallest businesses the ability to tailor a BI system to fit their needs and improve their businesses. Moreover, unlike traditional site-licensed softwarema cloud-based BI solution, upfront cost is reduced because all hardware and software systems are located and managed remotely by vendors and service providers.</p>
+                                <p> Trend: Cloud will become more and more widely used. Business are working on improving the security of cloud computing platforms.</p>
 
-                        <div class="tab-pane" id="strategydetection">
-                            <h3> Human Versus Machine</h3>
-                            <p>Here I propose a statistical model to explore the ability of a computer to forecast human being's choice. A Markov model is formulated in which the latent state space contains both pure and mixed strategies, and allows switching between these states. <br><br>
-                            In the following simplified "Scissors Rock Papaer" game, you will see machine learns from previous repeated gaming. A computer always follows its part of the unique mixed strategy Nash equilibrium profile.<br><br>
-                            On the other hand, estimated results show significant mixed strategy play and non-stationary dynamics.this model could assess whether individuals strategically use mixed strategies in repeated games.<br><br>
-                            Now let us see if you could beat the machine. Click on one of the three blocks to start. <br><br>
-                            </p>
-                            <!-- Scissors Rock Paper-->
-                            <p id="result">Please click one picture to start.</p>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td width=200px>
-                                            <div id="btnS" class="inputBtn"><a><img src="scissors.png" width="100" height="100"/>Scissors</a>
-                                            </div>
-                                        </td>
-                                        <td width=200px>
-                                            <div id="btnR" class="inputBtn"><a><img src="rock.png" width="100" height="100"/>Rock</a>
-                                            </div>
-
-                                        </td>
-                                        <td width=200px>
-                                            <div id="btnP" class="inputBtn"><a><img src="paper.png" width="100" height="100"/>Paper</a></div>
-
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            </div>
 
 
 
-                            <p id="result"><br><br>Tansfer Matrix</p>
+                            <!--Tab Stock Clustering-->
+                            <div class="tab-pane" id="stockclustering">
+                                <h3>Mine the Connections among Stocks</h3>
+                                <img id="money" src="money.jpg" width="150" height="175" />
+                                <!-- There are theories about stock ban kuai in economics -->
 
-                            <table id="state" border=1px>
-                                <tbody>
-                                    <tr>
-                                        
-                                        <td id="t00"></td>
-                                        <td id="t01"></td>
-                                        <td id="t02"></td>
-                                    </tr>
-                                    <tr>
-                                        
-                                        <td id="t10"></td>
-                                        <td id="t11"></td>
-                                        <td id="t12"></td>
-                                    </tr>
-                                    <tr>
-                                        
-                                        <td id="t20"></td>
-                                        <td id="t21"></td>
-                                        <td id="t22"></td>
+                                <!-- Intuitively thinking, clustering stocks as ban kuais can also help understanding and predicting the stock market -->
+                                <p>It has been widely accepted that Domino Effect of Board Linkage exist in security market. Intuitively thinking, prices of certain stocks tend to go up and down together, either because they are in the same industry or because they are from the same region.In other words, such each stocks logical connected, prediction. This is meaningful for portfolio management idea of avoiding putting eggs in the same basket.</p>
+                                <!-- Usage of the demo -->
+                                <p>Here we provide an interactive demo to demonstrate how such data mining techniques help improve human's understanding of the stock market. Given the stocks (specified by symbols) in the textbox below, we are able to identify their structure from the price correlations in the recent 300 days, and visualize such structure with a graph. </p>
+                                <!-- Analysis of the demo -->
+                                <p>Say we have 100 stocks, and daily prices for this year. So we get a 100 by 250 dimension matrix, roughly (weekends). Each stock is represented by a vector. The number of component is too large to estimate.Then we use PCA(principal component analysis) Analysis through dimension reduction and extracting principal component. After visualization, each stock is represented by a dot on a coordinate, and these dots falls into several clusters. </p>
+                                <p>You can also modify the symbols by yourself and see our algorithm's observation towards the market. Type in the symbol of any listed security and see what happens.</p>
+                                <textarea rows="5" cols="80" id="stocks">MSFT, INTC, AXP, C, JPM, BAC, WFC, COF, BRCM, NVDA, TXN</textarea>
+                                <br />
+                                <input type="submit" id="btnRun"></input>
+                                <br />
+                                <svg id="svg" width="640" height="560"></svg>
+                            </div>
+
+                            <div class="tab-pane" id="strategydetection">
+                                <h3> Human Versus Machine</h3>
+                                <p>Here I propose a statistical model to explore the ability of a computer to forecast human being's choice. A Markov model is formulated in which the latent state space contains both pure and mixed strategies, and allows switching between these states. <br><br>
+                                In the following simplified "Scissors Rock Papaer" game, you will see machine learns from previous repeated gaming. A computer always follows its part of the unique mixed strategy Nash equilibrium profile.<br><br>
+                                On the other hand, estimated results show significant mixed strategy play and non-stationary dynamics.this model could assess whether individuals strategically use mixed strategies in repeated games.<br><br>
+                                Now let us see if you could beat the machine. Click on one of the three blocks to start. <br><br>
+                                </p>
+                                <!-- Scissors Rock Paper-->
+                                <p id="result">Please click one picture to start.</p>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td width=200px>
+                                                <div id="btnS" class="inputBtn"><a><img src="scissors.png" width="100" height="100"/>Scissors</a>
+                                                </div>
+                                            </td>
+                                            <td width=200px>
+                                                <div id="btnR" class="inputBtn"><a><img src="rock.png" width="100" height="100"/>Rock</a>
+                                                </div>
+
+                                            </td>
+                                            <td width=200px>
+                                                <div id="btnP" class="inputBtn"><a><img src="paper.png" width="100" height="100"/>Paper</a></div>
+
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
 
-                                <p id="result"><br><br>Machine's Guessing<br></p>
-                                <div style="background-color:lightblue" ><p id="guess"></p></div>
-                                <p><i>Note:Above shows the machine's guessing for the next round. Suggest you do not look at it when making you next decision.</i></p><br><br><br><br>
-
-                                <script type="text/javascript" src="scissors-rock-paper.js"></script>
 
 
+                                <p id="result"><br><br>Tansfer Matrix</p>
 
+                                <table id="state" border=1px>
+                                    <tbody>
+                                        <tr>
+
+                                            <td id="t00"></td>
+                                            <td id="t01"></td>
+                                            <td id="t02"></td>
+                                        </tr>
+                                        <tr>
+
+                                            <td id="t10"></td>
+                                            <td id="t11"></td>
+                                            <td id="t12"></td>
+                                        </tr>
+                                        <tr>
+
+                                            <td id="t20"></td>
+                                            <td id="t21"></td>
+                                            <td id="t22"></td>
+                                        </tbody>
+                                    </table>
+
+                                    <p id="result"><br><br>Machine's Guessing<br></p>
+                                    <div style="background-color:lightblue" ><p id="guess"></p></div>
+                                    <p><i>Note:Above shows the machine's guessing for the next round. Suggest you do not look at it when making you next decision.</i></p><br><br><br><br>
+
+                                    <script type="text/javascript" src="scissors-rock-paper.js"></script>
+
+
+
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </body>
-    </html>
+            </body>
+        </html>
