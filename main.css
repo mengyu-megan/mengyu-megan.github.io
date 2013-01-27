@@ -21,14 +21,18 @@
 }
 #stocks
 {
-    font-size: 14pt;
+    display: block;
+    font-size: 12pt;
     width: 620px;
     height: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #btnRun
 {
     width: 90px;
     height: 30px;
+    margin-left: 80%
 }
 .node {
     stroke: #fff;
@@ -41,8 +45,11 @@
 svg
 {
     border: solid 1px black;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 40px;;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 .tab-pane
 {
@@ -97,15 +104,28 @@ svg
 {
     float:right;
 }
-#body
+body
 {
     background: #eeeeee;
 }
 #mainContainer
 {
+    width: 70%;
+    min-width: 700px;
     background: white;
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     border: solid 1px #aaaaaa
 }
+
+ #myfooter 
+ {
+    color: #999; 
+    text-align: center; 
+    margin-bottom: 20px;
+    font-size: 0.8em;
+  }
+    color: #999; 

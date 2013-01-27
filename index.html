@@ -8,24 +8,19 @@
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="bootstrap/css/docs.css" rel="stylesheet">
-        <link href="main.css" rel="stylesheet"></style>
+        <link href="main.css" rel="stylesheet">
         <script type="text/javascript" src="d3.v3.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="stocks.js"></script>
         <script type="text/javascript">
             $(function(){ 
-                $('#ma').html('<a href="mailto:meng.yu' + '@nyu' + '.edu">meng.yu' + '@nyu' + '.edu</a>'); 
-                var m = window.location.href.match(/.*#(.*)/);
-                if (m != null)
-                     $('#mainTab a[href="#' + m[1] + '"]').tab('show');
-            });
-        </script>
-        <script type="text/javascript">
-            $(function() 
-            {
-                $('[rel="tooltip"]').tooltip({ 'selector': '', 'placement': 'top' });
-            });
-        </script>
+                    $('[rel="tooltip"]').tooltip({ 'selector': '', 'placement': 'top' });
+                    $('#ma').html('<a href="mailto:meng.yu' + '@nyu' + '.edu">meng.yu' + '@nyu' + '.edu</a>'); 
+                    var m = window.location.href.match(/.*#(.*)/);
+                    if (m != null)
+                    $('#mainTab a[href="#' + m[1] + '"]').tab('show');
+                    });
+</script>
     </head>
 
     <body>
@@ -38,7 +33,7 @@
             </header>
 
             <div class="container">
-                <div class="span8 offset2" id="mainContainer">
+                <div id="mainContainer">
                     <!-- This is the tab itself-->
                     <ul class="nav nav-tabs" id="mainTab">
                         <li class="active"><a href="#home" data-toggle="tab" id="tabHome">Profile</a></li>
@@ -75,8 +70,7 @@
                             <!--Tab BI-->
                             <div class="tab-pane" id="bi">
 
-                                <h3> Business Intelligence from Scratch</h3>
-                                <!--<img id="cloud" src="cloud.jpg" width="275" height="325" />-->
+                                <h3> Business Intelligence System from Scratch</h3>
                                 <p>Programming is critical for making smart business decisions based on real-life data. In this process, data collection, storage, processing and visualization are the core modules making up a Business Intelligence (BI) system. With the passion to use programming to solve real-life problems, I built a BI system from scratch.</p>
                                 <p>Move the mouse cursor above each module to see more detailed introduction. For demos of our data visualization module, check <a href="#stockclustering" onclick="$('#tabSC').tab('show');">stock clustering</a>. For demos of our machine learning algorithms, check <a href="#strategydetection" onclick="$('#tabSD').tab('show');">strategy detection</a>.</p>
                                 <div id="biCanvas">
@@ -87,6 +81,17 @@
                                     <a href="#" rel="tooltip" title="To help huamns further explore the insights from the data intuitively, our system is able to generate reports with vivid interactive visualization from the analysis." style="left: 482px; top: -145px; width: 160px; height: 76px"><div style="width: 160px; height: 76px"></div></a>
                                     <a href="#" rel="tooltip" title="We also provide a web-based server monitoring interface to monitor the load of the server, ensuring quality of service in the real production environment." style="left: 275px; top: 78px; width: 120px; height: 70px"><div style="width: 120px; height: 70px"></div></a>
                                 </div>
+                                <h3> Business Implications</h3>                         
+                                <p> The framework of BI system sheds a light upon a complex application delivery chain via which Applications are delivered. It gives rise to Application Performance Management (APM), the translation of IT metrics into business meaning that that focuses on monitoring and managing the performance of applications. </p>
+                                <p> Notebly, today's APM is facing the challenge that the delivery chain has becoming more and more mobile and distributed, reliant on third parties, cloud-based, complex and fragile. Among them is one of the hottest debated topic of cloud-computing. </p>
+                                <img id="cloud" src="cloud.jpg" width="300" height="350" />
+                                <p>While cloud-computing, with software-as-a-service (SAAS) the most popular type, brings a lot of advantages: </p>
+                                <p><b>Cost Reduction</b> - On one hand, small and mid-size businesses are able to get access to more sophisticated technology at lower prices. On the other hand, it reduces paperwork, lowers transaction costs, and minimizes the invest in hardware (and the resources to manage it). </p>
+                                <p><b>Scalablility</b> - Cloud computing services allow businesses to only pay for what they use. And as your business grows, you can accommodate by adding more server space.</p>
+                                <p>There are also concerns:</p>
+                                <p><b>Corporate Governance</b> - Moving business to ‘the cloud’ reduces the need for IT staffs, cutting job may bring lawsuits or reputation diminish.</p>
+                                <p><b>Privacy and Security</b> - How to make sure your important data in the cloud is protected.</p>
+                                <p><b>Data Mobility and Ownership</b> - Once you decide to stop the cloud service, can you get all your data back? How can you be certain that the service provider will destroy your data once you’ve canceled the service?</p>
                             </div>
 
                             <!--Tab Stock Clustering-->
@@ -99,15 +104,15 @@
                                 <p>Here we provide an interactive demo to demonstrate how such data mining techniques help improve human's understanding of the stock market. Given the stocks (specified by symbols) in the textbox below, we are able to identify their structure from the price correlations in 2012, and visualize such structure with a graph. </p>
                                 <!-- Analysis of the demo -->
                                 <p>We've already put an example set in the textbox. Click "Run!" to build the visualization. You can also modify the symbols (should be indexed by S&amp;P 500) by yourself and check the results. If the default stocks are used, it's obvious that the financial stocks and IT stocks are separated into two clusters within our visualization.</p>
-                                <p>This demo involves python for stock data crawling, javascript for data analysis and visualization.</p>
-                                
+                                <p>This demo involves python for stock data crawling, javascript for data analysis and visualization.</p><br>
+
                                 <textarea rows="5" cols="80" id="stocks">MSFT, INTC, AXP, C, JPM, BAC, WFC, COF, BRCM, NVDA, TXN</textarea>
-                                <br />
                                 <input type="submit" id="btnRun" Value="Run!"></input>
                                 <br />
                                 <svg id="svg" width="640" height="560"></svg>
                             </div>
 
+                            <!--Tab Strategy Detection-->
                             <div class="tab-pane" id="strategydetection">
                                 <h3>Strategy Detection with Time Sequence Analysis</h3>
                                 <p>Human are "intelligent" creatures, but sometimes simple mathematics or economics models can be more smart and beat humans in various tasks. Here we provide a demo about how machines can beat humans in the game "rock-paper-scissors".</p>
@@ -158,8 +163,13 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div>                       
+                    </div>
+
+                    <div id = "myfooter">
+                        <p>Powered by HTML5, Bootstrap and d3.js, hosted by GitHub</p>
                     </div>
                 </div>
+
             </body>
         </html>
