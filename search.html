@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            var url = /#q=(.*)/.exec(window.location.href);
+            url = url[1]
+            if (url == 'mydashboard')
+                window.location.href = 'http://localhost:8080/';
+            else
+                window.location.href = 'http://www.google.com/search?q=' + url;
+        </script>
+    </head>
+</html>
