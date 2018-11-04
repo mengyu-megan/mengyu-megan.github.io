@@ -41,6 +41,7 @@
                         <li><a href="#stockclustering" data-toggle="tab" id="tabSC">Stock Clustering</a></li>
                         <li><a href="#strategydetection" data-toggle="tab" id="tabSD">Strategy Detection</a></li>
                         <li><a href="#demographic" data-toggle="tab" id="tabSE">World Demographic Analysis</a></li>
+                        <li><a href="#alien" data-toggle="tab" id="tabSE">Alien Sightings</a></li>
                     </ul>
 
                     <!-- The actual content of the tab-->
@@ -176,6 +177,21 @@ i                               </video>
                                 <p><i>The workbook can be downloaded <a href = "https://public.tableau.com/profile/meng7205#!/vizhome/FertilityLifeExpetancyAnimation/GloblDemographics">here</a></i/</p><br><br>
                                 <!-- Analysis of the demo -->
                                 <p>We draw fertility rate as horizontal axis, overall life expectancy as vertical axis, and the size of red cirle denoting the size of population. It could be inferred that over the course of around five decades, globally fertility rate has been decreasing while life expenctancy increasing, meawhile total popultaion has been increasing as well. In particular, Asia population and average life expenctancy saw much significant increase compared with other regions, indicating a massive expansion of this region. </p><br>
+                            </div>
+
+                            <!--Alien Sightings-->
+                            <div class="tab-pane" id="alien">
+                                <h3>Mine the Commonality among Alien Sightings</h3>
+                                <img id="spacecraft" src="spacecraft.jpg" style= "width:50%;height:50%;float:right"/>
+                                <!-- Intuitively thinking, clustering stocks as ban kuais can also help understanding and predicting the stock market -->
+                                <p>We humans have, since the earliest civilizations, never stopped the curiosity towards space. We have been always searching for an answer to this question: are there other intelligent species like us in the universe? Are they also curious about us? Have they already made the first contact? Worldwide, many people have claimed to observe UFO. On a secret mission, we obtained data on reported UFO sightings in various countries since 1939.</p> 
+                                <!-- Tag Cloud for Description -->
+                                <p>The data contains more than 83,000 records from 1939 to 2018, privides information about time, shape, duration, location and descriptive information from the vitness. One of the most intersting field in the raw data set is the 'Description' column. It is impossible to have a human being reading through all records. We use Tag Cloud to visualize the 'Description’ field, the bigger the font size, the higher the word's frequency is among all records. Inspired by most frequent words, we created Tableau dashboards.</p>
+                                <!-- Analysis of the demo -->
+                                <img id="spacecraft" src="TagCloud.png" style="width:60%; height=60%; display:block; margin-left:auto; margin-right:auto" /><br>
+                                <p>It could be implied that the most popular characteristics being <b>bright light moving orange triangle objects</b>.Then we can create a dashboard to visualize these dimentions.</p><br> 
+                                <img id="aliendashboard" src="AlienDashboard2.png" style="display:block; margin-left:auto; margin-right:auto; border:1px solid #D3D3D3" /><br>
+                                <p><i>The workbook can be downloaded <a href = "https://public.tableau.com/profile/meng7205#!/vizhome/UFO_19/Overview">here</a></i/</p><br><br>
                             </div>
                             <!-- another project-->
 
